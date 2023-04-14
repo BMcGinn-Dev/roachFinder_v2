@@ -1,10 +1,63 @@
 from flask import Flask, render_template, request
 import requests
+import re
+
+import scraperV1
+import spread_scraperV1
+import determinator
+import decision_maker
+
+#_________________________________________________________________________________________________________________________________________________________________________________
+full_team_list_formatted = ['Arizona Cardinals', 'Atlanta Falcons', 'Baltimore Ravens', 'Buffalo Bills', 'Carolina Panthers', 'Chicago Bears', 
+                  'Cincinnati Bengals', 'Cleveland Browns', 'Dallas Cowboys', 'Denver Broncos', 'Detroit Lions', 'Green Bay Packers', 
+                  'Houston Texans', 'Indianapolis Colts', 'Jacksonville Jaguars', 'Kansas City Chiefs', 'Las Vegas Raiders', 'Los Angeles Chargers', 
+                  'Los Angeles Rams', 'Miami Dolphins', 'Minnesota Vikings', 'New England Patriots', 'New Orleans Saints', 'New York Giants', 'New York Jets', 'Philadelphia Eagles', 
+                  'Pittsburgh Steelers', 'San Francisco 49ers', 'Seattle Seahawks', 'Tampa Bay Buccaneers', 'Tennessee Titans', 'Washington Commanders']
+
+
+#_________________________________________________________________________________________________________________________________________________________________________________
+#Used for the Current Week page
+
+#This formats the team names
+def change_name_for_col1(matchups):
+    new_matches = []
+    for match in matchups:
+        temp = []
+        new = match.split(',')
+        for name in new:
+            for teamName in full_team_list_formatted:
+                formatted = teamName
+                teamName = teamName.lower()
+                teamName = str(teamName)
+                teamName = teamName.replace(" ", "")
+                if name == teamName:
+                    name = formatted
+            temp.append(name)
+        new_matches.append(temp)
+    return new_matches
+
+#Getting the matchups to display
+matchups = scraperV1.matchups
+matchups_length = scraperV1.matchups_length
+length_list = [i for i in range(matchups_length)]
+
+#Need to use some re to make the matchups look pretty
+formatted_matchups = change_name_for_col1(matchups)
+#print(formatted_matchups)
+
+# Used to display the team names and spreads of each team
+spr_pairs = spread_scraperV1.pairs
+
+#Used to show how much the predicted winner will win by
+win_lose_spr = determinator.win_lose_spr
+
+#Used to display the winner, loser, and spread
+form_choices = decision_maker.form_choices
 
 
 
-#___________________________________________________________________________________________________________________________________________________
 
+#__________________________________________________________________________________________________________________________________________________________________________________
 #Used for the Calculator Page
 WINS = 29
 LOSSES = 15
@@ -45,6 +98,8 @@ ratio_v2 = "{:.3f}".format(ratio_v2)
 
 record_v2 = {'wins': WINS_v2, 'losses': LOSSES_v2}
 
+#__________________________________________________________________________________________________________________________________________________________________________________
+
 
 
 
@@ -64,7 +119,7 @@ def about():
 # Current Week V1 page
 @app.route("/current_week_v1")
 def current_week_v1():
-    return render_template("current_week_v1.html")
+    return render_template("current_week_v1.html", matchups_length = length_list, matchups = formatted_matchups, pairs = spr_pairs, form_choices = form_choices, win_lose_spr = win_lose_spr)
 
 # Current Week V2 page
 @app.route("/current_week_v2")
