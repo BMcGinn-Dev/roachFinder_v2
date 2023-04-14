@@ -22,39 +22,7 @@ soup_str = str(soup)
 
 #HERE HER HER HERE HERE HERE HERE HERE HERE
 #This is the output you're looking for with the scrape!!!!
-spread_options = [    ["dallascowboys", 0],
-    ["tampabaybuccaneers", 0],
-    ["minnesotavikings", 0],
-    ["cincinnatibengals", 0],
-    ["buffalobills", 0],
-    ["pittsburghsteelers", 0],
-    ["tennesseetitans", 0],
-    ["arizonacardinals", 0],
-    ["houstontexans", 0],
-    ["jacksonvillejaguars", 0],
-    ["losangeleschargers", 0],
-    ["kansascitychiefs", 0],
-    ["philadelphiaeagles", 0],
-    ["atlantafalcons", 0],
-    ["chicagobears", 0],
-    ["detroitlions", 0],
-    ["newyorkjets", 0],
-    ["newyorkgiants", 0],
-    ["washingtoncommanders", 0],
-    ["baltimoreravens", 0],
-    ["miamidolphins", 0],
-    ["newenglandpatriots", 0],
-    ["carolinapanthers", 0],
-    ["neworleanssaints", 0],
-    ["lasvegasraiders", 0],
-    ["denverbroncos", 0],
-    ["seattleseahawks", 0],
-    ["greenbaypackers", 0],
-    ["losangelesrams", 0],
-    ["sanfrancisco49ers", 0],
-    ["indianapoliscolts", 0],
-    ["clevelandbrowns", 0]
-]
+spread_options = [['Dallas Cowboys', -4], ['Tampa Bay Buccaneers', 4], ['Cincinnati Bengals', -6], ['Minnesota Vikings', 6], ['Buffalo Bills', -3], ['Pittsburgh Steelers', 3], ['Arizona Cardinals', -5], ['Tennessee Titans', 5], ['Jacksonville Jaguars', 10], ['Houston Texans', -10], ['Kansas City Chiefs', 7], ['Los Angeles Chargers', -7], ['Philadelphia Eagles', 6], ['Atlanta Falcons', -6], ['Detroit Lions', 5], ['Chicago Bears', -5], ['New York Jets', 6], ['New York Giants', -6], ['Baltimore Ravens', 3], ['Washington Commanders', -3], ['Miami Dolphins', 8], ['New England Patriots', -8], ['New Orleans Saints', 3], ['Carolina Panthers', -3], ['Denver Broncos', 9], ['Las Vegas Raiders', -9], ['Green Bay Packers', 5], ['Seattle Seahawks', -5], ['San Francisco 49ers', 5], ['Los Angeles Rams', -5], ['Cleveland Browns', 9], ['Indianapolis Colts', -9]]
 
 
 #Now I need to pair each adjacent element in the list which I already did but deleted for some reason
@@ -75,4 +43,4 @@ pairing = zip(spread_options[::2], spread_options[1::2])
 
 # Use a list comprehension to combine the pairs into one element
 pairs = [x + y for x, y in pairing]
-print(pairs)
+#print(pairs)
