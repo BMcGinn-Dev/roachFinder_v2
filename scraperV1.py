@@ -187,14 +187,28 @@ res = get_offensive_stats()
 
 #Step 3: get the matchups: (we cant actually do this yet)
 
-matchups = ['dallascowboys,tampabaybuccaneers', 'minnesotavikings,cincinnatibengals', 
-            'buffalobills,pittsburghsteelers', 'tennesseetitans,arizonacardinals', 
-            'houstontexans,jacksonvillejaguars', 'losangeleschargers,kansascitychiefs', 
-            'philadelphiaeagles,atlantafalcons', 'chicagobears,detroitlions', 
-            'newyorkjets,newyorkgiants', 'washingtoncommanders,baltimoreravens', 
-            'miamidolphins,newenglandpatriots', 'carolinapanthers,neworleanssaints', 
-            'lasvegasraiders,denverbroncos', 'seattleseahawks,greenbaypackers', 
-            'losangelesrams,sanfrancisco49ers', 'indianapoliscolts,clevelandbrowns']
+#Need to fill the matchups.txt file in the proper format
+
+#dallascowboys,tampabaybuccaneers
+#greenbaypackers,chicagobears
+#miamidolphins,atlantafalcons
+
+#Getting the matchups from Include/matchups.txt
+matchups = []
+
+try:
+    with open('.\Include\matchups.txt', 'r') as f:
+        for line in f:
+            matchups.append(line)
+        f.close()
+except FileNotFoundError:
+    print("We didnt find the matchups.txt file you tried to generate")
+
+matchups = [s.rstrip() for s in matchups]
+matchups_length = len(matchups)
+#print(matchups_length)
+#print(matchups)
+
 
 #print(len(res))
 
@@ -439,13 +453,13 @@ for matchup in matchups:
 
 
 #print(fin_result_data)
-fin_result_df = df = pd.DataFrame(fin_result_data, columns=['Winner', 'Loser', 'Spread', 'Winner Total', 'Loser Total', 'Over_Under'])
+fin_result_df = pd.DataFrame(fin_result_data, columns=['Winner', 'Loser', 'Spread', 'Winner Total', 'Loser Total', 'Over_Under'])
 
 
 # In[8]:
 
 
-print(fin_result_df)
+#print(fin_result_df)
 
 
 # In[ ]:
