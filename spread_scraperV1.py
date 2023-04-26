@@ -20,7 +20,10 @@ soup_str = str(soup)
 
 #----------------------------------------------------------------------------------------
 
+
 #HERE HER HER HERE HERE HERE HERE HERE HERE
+#You must do this prior to the scraperV1.py file bc you use this for the matchups
+
 #This is the output you're looking for with the scrape!!!!
 spread_options = [['Dallas Cowboys', -4], ['Tampa Bay Buccaneers', 4], ['Cincinnati Bengals', -6], ['Minnesota Vikings', 6], ['Buffalo Bills', -3], ['Pittsburgh Steelers', 3], ['Arizona Cardinals', -5], ['Tennessee Titans', 5], ['Jacksonville Jaguars', 10], ['Houston Texans', -10], ['Kansas City Chiefs', 7], ['Los Angeles Chargers', -7], ['Philadelphia Eagles', 6], ['Atlanta Falcons', -6], ['Detroit Lions', 5], ['Chicago Bears', -5], ['New York Jets', 6], ['New York Giants', -6], ['Baltimore Ravens', 3], ['Washington Commanders', -3], ['Miami Dolphins', 8], ['New England Patriots', -8], ['New Orleans Saints', 3], ['Carolina Panthers', -3], ['Denver Broncos', 9], ['Las Vegas Raiders', -9], ['Green Bay Packers', 5], ['Seattle Seahawks', -5], ['San Francisco 49ers', 5], ['Los Angeles Rams', -5], ['Cleveland Browns', 9], ['Indianapolis Colts', -9]]
 
@@ -44,3 +47,18 @@ pairing = zip(spread_options[::2], spread_options[1::2])
 # Use a list comprehension to combine the pairs into one element
 pairs = [x + y for x, y in pairing]
 #print(pairs)
+
+#Using the 'pairs' list in order to get the matchups in this format --> ['dallascowboys,tampabaybuccaneers', 'minnesotavikings,cincinnatibengals', 'buffalobills,pittsburghsteelers', 'tennesseetitans,arizonacardinals', 'houstontexans,jacksonvillejaguars', 'losangeleschargers,kansascitychiefs', 'philadelphiaeagles,atlantafalcons', 'chicagobears,detroitlions', 'newyorkjets,newyorkgiants', 'washingtoncommanders,baltimoreravens', 'miamidolphins,newenglandpatriots', 'carolinapanthers,neworleanssaints', 'lasvegasraiders,denverbroncos', 'seattleseahawks,greenbaypackers', 'losangelesrams,sanfrancisco49ers', 'indianapoliscolts,clevelandbrowns']
+
+matchups = []
+for item in pairs:
+    team1 = item[0]
+    team2 = item[2]
+    team1 = team1.lower().replace(' ', '')
+    team2 = team2.lower().replace(' ', '')
+    matchup = team1 +',' + team2
+    matchups.append(matchup)
+
+#print("spreadscraper matchups list: ")
+#print(matchups)
+#print("________________________")

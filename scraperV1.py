@@ -4,7 +4,8 @@
 # In[1]:
 
 
-import json, pathlib, re, time, pandas as pd, bs4, requests, os
+import re, pandas as pd, bs4, requests
+import spread_scraperV1
 
 
 # How this is supposed to go:
@@ -55,6 +56,7 @@ def fill_results_list():
     for url in urls:
         target_url = url
         
+        #In case you begin to get an SSL Certificate are, change to this --> r = request.get(target_url, veryify=False)
         r = requests.get(target_url)
         content = r.content
         content = content.decode('utf-8')
@@ -194,10 +196,14 @@ res = get_offensive_stats()
 #miamidolphins,atlantafalcons
 
 #Getting the matchups from Include/matchups.txt
-matchups = []
+matchups = spread_scraperV1.matchups
+matchups_length = len(matchups)
+#print(matchups)
 
+#commenting out .txt file method
+'''
 try:
-    with open('.\Include\matchups.txt', 'r') as f:
+    with open('./matchups.txt', 'r') as f:
         for line in f:
             matchups.append(line)
         f.close()
@@ -205,10 +211,10 @@ except FileNotFoundError:
     print("We didnt find the matchups.txt file you tried to generate")
 
 matchups = [s.rstrip() for s in matchups]
-matchups_length = len(matchups)
-#print(matchups_length)
-#print(matchups)
 
+#print(matchups_length)
+
+'''
 
 #print(len(res))
 

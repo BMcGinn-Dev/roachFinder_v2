@@ -6,6 +6,7 @@ import scraperV1
 import spread_scraperV1
 import determinator
 import decision_maker
+import differential_rag
 
 #_________________________________________________________________________________________________________________________________________________________________________________
 full_team_list_formatted = ['Arizona Cardinals', 'Atlanta Falcons', 'Baltimore Ravens', 'Buffalo Bills', 'Carolina Panthers', 'Chicago Bears', 
@@ -55,10 +56,19 @@ win_lose_spr = determinator.win_lose_spr
 form_choices = decision_maker.form_choices
 
 
+#This is for getting the hex values to show the rag values of the differentials
+hex_list = differential_rag.hex_list
+
+for dif_hex in hex_list:
+    dif_hex[0] = round(dif_hex[0], 3)
+
+print(hex_list)
 
 
 #__________________________________________________________________________________________________________________________________________________________________________________
 #Used for the Calculator Page
+
+#UPDATE v1 WINS HERE
 WINS = 29
 LOSSES = 15
 total_games = WINS + LOSSES
@@ -80,6 +90,7 @@ record = {'wins': WINS, 'losses': LOSSES}
 
 # v2 Calculator
 
+#UPDATE v2 WINS HERE
 WINS_v2 = 20
 LOSSES_v2 = 38
 total_games_v2 = WINS_v2 + LOSSES_v2
@@ -110,7 +121,7 @@ app = Flask(__name__)
 # Home page
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("home.html", recordV1 = record, recordV2 = record_v2, ratioV1 = ratio, ratioV2 = ratio_v2)
 
 @app.route("/about")
 def about():
@@ -119,7 +130,7 @@ def about():
 # Current Week V1 page
 @app.route("/current_week_v1")
 def current_week_v1():
-    return render_template("current_week_v1.html", matchups_length = length_list, matchups = formatted_matchups, pairs = spr_pairs, form_choices = form_choices, win_lose_spr = win_lose_spr)
+    return render_template("current_week_v1.html", matchups_length = length_list, matchups = formatted_matchups, pairs = spr_pairs, form_choices = form_choices, win_lose_spr = win_lose_spr, hex_list = hex_list)
 
 # Current Week V2 page
 @app.route("/current_week_v2")
@@ -129,7 +140,7 @@ def current_week_v2():
 # History page
 @app.route("/history")
 def history():
-    return render_template("history.html")
+    return render_template("history.html", recordV1 = record, recordV2 = record_v2, ratioV1 = ratio, ratioV2 = ratio_v2)
 
 # Calculator page
 @app.route("/calculator/", methods=["POST", "GET"])
