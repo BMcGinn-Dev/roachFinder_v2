@@ -5,8 +5,97 @@
 {% endblock %}
 
 {% block content %}
-  <h1>About Roach</h1>
-  <p>I find things.</p>
+<!-- Styling -->
+<style>
+  h1, h2, h3, h4{
+    text-align: center;
+  }
+  li{
+    color: white;
+  }
+</style>
+
+<!-- Begin content -->
+  <h1>About the roachFinder:</h1>
+  <hr>
+  <h3>What:</h3>
+  <p>
+    The roachFinder is a platform where I publicly post spread selections for each of the NFL's 286 games played in the 2023-2024 season. This is a continuation of an idea I pursued
+    around my sophomore year of college. The idea is that I scrape numerous NFL datapoints from various sites across the internet which I ingest and feed into an algorithm(s) of my own creation.
+    The algorithm is built upon the idea of weighing various player and team analytics directly against that particular team's correlated competitor that week and using that comparision to calculate
+    mutliple 'edges'/'shortcomings' in each aspect of a team's game. The resulting outcome is best put as a statement of 'fact', an example being <i>"Team X will beat Team Y by 5.00 points."</i>
+    This <strong>prediction</strong> is compared against the <strong>spread</strong> which leads to the roachFinder algorithm's <strong>choice</strong>.
+  </p>
+</br>
+
+  <h3>Why:</h3>
+  <p>
+    It should not be news to you that sports betting (or gambling in general) is a zero-zum game that tends to heavily favor the casino. It is hard for casual gamblers (myself) to see past their
+    own Monte Carlo fallacies to focus on true financial gain, that is the purpose of the roachFinder algorithm. As per sitpicks.com, only 3-5% of all sports bettors are profitable in the long run. 
+    Futhermore, winning anything above (only) 55% of all bets puts people in the top 3% of all gamblers.
+    The aim of the roachFinder algorithm is to produce spread selections that, at a minimum, place those who follow its choices well into the top 3% of gamblers when followed appropriately.
+    Please note, this is designed for long term success. Do not erroneously believe that a certain random event is less likely or more likely to happen based on the outcome of a previous spread choice or series of choices.
+  </p>
+
+</br>
+
+  <h3>How:</h3>
+  <p>
+      The algorithm's success/failure holds no water if it is not followed in the exact manner in which it is intended to be. There are three basic rules one must follow:
+      <ol>
+        <li>A user must bet the selected spread for each instructed game for the entirity of the season. </li>
+        <li>A user must remain consistent in his/her unit bet valuation. Whether it is $10, $100, or $500, you must not change the wager amount of each bet. </li>
+        <li>A user must not wager on any games in week 1 or week 18. After analyzing last year's data, I was (pleasantly) suprised by how fast the algorithm accounted for adjusted rosters post-week 1.
+          This means, starting week 2, you begin wagering. I also realized the significant variations of 'edges'/'shortcomings' for each team in week 18. This is likely due to team adjustments regarding their playoff berth.
+        </li>
+      </ol>
+
+      <p>These rules are universal for both algorithms.</p>
+  </p>
+
+</br>
+
+  <h3>Previous years: </h3>
+  <p> 
+    Although I will be running this algorithm for what is now the fourth year, I have not done a very nice job at maintaining the records of each season. </br>
+    I'll post the screenshots later, but here is the record of last year's algorithm. I cant perfectyly recall the percentages of the first two years, however I can say that last year was the <strong>worst</strong> performing year to date. 
+  </p>
+  <div class="row">
+    <div class="col-3">
+      Spreads Covered: 146
+      Spreads Covered (Post - Week 3): 120
+    </div>
+    <div class="col-3">
+      Spreads Lost: 108
+      Spreads Lost (Post - Week 3): 86
+    </div>
+    <div class="col-3">
+      Accurracy: 57.48%
+      Accuraccy (Post - Week 3): 58.25%
+    </div>
+  </div>
+  <p>Given that last year was the worst year the algorithm has had and we still managed to make money, I would consider myself happy. Plus remember the quote...</p>
 
 
+  <figure>
+    <blockquote class="blockquote">
+      <p>Winning anything above 55% of all bets puts people in the top 3% of all gamblers</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      Roach Johnson <cite title="Source Title">sitpicks.com</cite>
+    </figcaption>
+  </figure>
+
+</br>
+<h3>What's new:</h3>
+<p>
+  If you're returning from last year, firstly thanks for checking my site out. I'm sure the first change you can see is the UI, things do look a bit different. I am by no means attempting to look professional
+  but I do think this new look makes it a bit more enjoyable to view, especially on mobile devices. Secondly, you will see there are some new tabs, primarily centerd around 'v2'.
+  Although I do believe the current algorithm is just lovely, I wanted to see if I could make it even better. This year I will be tracking the OG roachFinder v1 algorithm as well as (hopefully)
+  a brand new roachFinder v2. This v2 design includes even more webscraping, some new (real-time) API integrations, deeper data comparisons, and maybe even a little machine learning (&#58393;).
+  Honestly I may have bitten off more than I could chew with this new v2 system. I am slowly delving deep into a mental abyss. I have done irrevisble damage to my body and mind and I am just getting started.
+</p>
+
+
+  <i>“There is always something more to learn." </i>
 {% endblock %}

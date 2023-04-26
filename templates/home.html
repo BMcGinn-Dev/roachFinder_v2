@@ -5,7 +5,84 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Home Page</h1>
-  <p>We all suck at betting.</p>
+
+</br>
+<h1 style="text-align: center;"> Welcome to the roachFinder!</h1>
+<p> As I'm sure you can tell, the site is currently under renovations for the upcoming 2023-2024 season. There are many more exciting things I want to include this year ranging from a whole new algorithm (v2), UI improvements, more efficient data scraping/storage, and much more! To learn more about the site, its purpose, and how to use it, check out the 'About' page. 
+  I will also be showing the results of the 2022-2023 season there for the moment. Thanks for your patience - Roach</p>
+
+</br>
+
+<div>
+  <div class="container">
+    <h1 style="text-align: center;"> 2023-24 Record (v1)</h1>
+    <div class="row align-items-start">
+      <div class="col">
+        <div class="card" style="background-color: lightgreen;">
+          <div class="card-body" style="text-align: center;">
+            <h5 class="card-title">Wins</h5>
+            <h3>{{recordV1['wins']}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="background-color: lightcoral;">
+          <div class="card-body" style="text-align: center;">
+            <h5 class="card-title">Losses</h5>
+            <h3>{{recordV1['losses']}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="background-color: royalblue;">
+          <div class="card-body" style="text-align: center;">
+            <h5 class="card-title">Accuracy</h5>
+            <h3>{{ratioV1}}%</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </br>
+    <!-- Begin v2 Record -->
+  <div class="container">
+    <h1 style="text-align: center;"> 2023-24 Record (v2)</h1>
+    <div class="row align-items-start">
+      <div class="col">
+        <div class="card" style="background-color: lightgreen;">
+          <div class="card-body" style="text-align: center;">
+            <h5 class="card-title">Wins</h5>
+            <h3>{{recordV2['wins']}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="background-color: lightcoral;">
+          <div class="card-body" style="text-align: center;">
+            <h5 class="card-title">Losses</h5>
+            <h3>{{recordV2['losses']}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="background-color: royalblue;">
+          <div class="card-body" style="text-align: center;">
+            <h5 class="card-title">Accuracy</h5>
+            <h3>{{ratioV2}}%</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </br>
+</div>
+
+<!-- 
+<h1 style="text-align: center;">Carley Perovic do you want to makeout?</h1>
+<div style="display: flex; justify-content: center;">
+  <img src="https://rebelliousdevelopment.com/wp-content/uploads/2018/07/92878-smallv2-480002.jpg" class="img-fluid" alt="...">
+</div>
+-->
+  
 
 {% endblock %}

@@ -3,11 +3,47 @@
 
 <div style="margin: 0 auto; width: 50%;">
     {% block content %}
+</br>
 
-    <div class="card text-center" style="color: rgb(57, 8, 51); background-color: rgb(145, 191, 207); border-width: 3px; border-color: black; margin: 20px">
+    <style>
+        #calcGuy {
+            color: rgb(57, 8, 51); 
+            background: linear-gradient(to bottom left, #00FFA3, #03E1FF, #DC1FFF);
+            border-width: 3px; 
+            border-color: black; 
+            margin: 20px; 
+            border-radius: 10px;
+        }
+
+        .shimmer-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            color: #fff;
+            background: linear-gradient(-45deg, #000, #fff);
+            background-size: 400%;
+            transition: all 0.5s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 2px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .shimmer-button:hover {
+            background-position: 100%;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+        }
+
+
+    </style>
+
+
+    <div class="card text-center" id="calcGuy">
         <div class="card-body">
             <h5 class="card-title">{{record['wins']}} - {{record['losses']}} </h5>
-            <h6 class="card-subtitle mb-2 text-muted">Current Record</h6>
+            <h6 class="card-subtitle mb-2">Current Record</h6>
             <p>This calculator is taking into account all bets were placed at a .909090 (-110) multiplier.</p>
 
             <form action="#" method="POST">
@@ -17,7 +53,7 @@
                     <input type="number" class="form-control" id="unit_price" name="unit_price" min="0.00" value="0">
                 </div>
             </br>
-            <button type="submit" class="btn btn-primary" style="background-color: green;">Submit</button>
+            <button type="submit" class="shimmer-button style="background-color: green;">Submit</button>
             </form>
 
             <!--Shows they are up if solution is positive, shows they are down if negative, add Red&Green for each, is_positive passed from calculator definition in server.py-->
@@ -30,6 +66,6 @@
             {% endif %}
         </div>
     </div>
-
+</br>
     {% endblock %}
 </div>

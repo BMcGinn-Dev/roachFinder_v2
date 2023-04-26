@@ -1,11 +1,513 @@
 {% extends 'base.html' %}
 
+
+
 {% block title %}
     History
 {% endblock %}
 
 {% block content %}
-  <h1>History Page</h1>
-  <p>We all suck at history.</p>
+</br>
+{% set totalWeekNum = 20 %}
+{% set totalRows = 5 %}
+
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap JavaScript plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+<style>
+  /* Set font and text alignment */
+  table {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Add border and padding to cells */
+  table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  /* Add background color to header row */
+  table th {
+    background-color: #f2f2f2;
+  }
+
+  /* Add background color to alternate rows */
+  table tr {
+    background-color: #f9f9f9;
+  }
+
+  /* Add hover effect to rows */
+  table tr:hover {
+    background-color: #f2f2f2;
+  }
+
+  /* Make table responsive */
+  @media only screen and (max-width: 767px) {
+    table {
+      width: 100%;
+      margin-bottom: 1rem;
+      color: #212529;
+      background-color: transparent;
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    table thead {
+      display: none;
+    }
+    table tr {
+      border-top: 1px solid #dee2e6;
+      background-color: #fff;
+    }
+    table td {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      border-bottom: 1px solid #dee2e6;
+    }
+    table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+
+  #table-heading {
+    text-align: middle;
+  }
+
+
+  h2, h5 {
+    text-align: center;
+    color: rgb(255, 255, 255)
+  }
+
+  h6{
+    color: black;
+  }
+
+  #buttonX {
+    padding: 10px;
+  }
+
+</style>
+
+
+  <!-- V1 Week History -->
+  <div>
+    <h2>V1 Weekly Records</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr class="table-primary">
+          <th>Week</th>
+          <th>Record</th>
+          <th>Accuracy</th>
+          <th>Idv. Results</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="table-success">
+            <td>Week 1</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr class="table-danger">
+            <td>Week 2</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 3</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 4</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 5</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 6</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 7</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 8</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 9</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 10</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 11</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 12</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 13</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 14</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 15</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 16</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 17</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 18 (DO NOT BET)</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Wildcards</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Divsional Championships</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Conference Championships</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Superbowl</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</br>
+  <hr>
+
+  <!-- V12 Week History -->
+  <div>
+    <h2>V2 Weekly Records</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Week</th>
+          <th>Record</th>
+          <th>Accuracy</th>
+          <th>Idv. Results</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>Week 1 (DO NOT BET)</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 2</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 3</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 4</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 5</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 6</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 7</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 8</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 9</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 10</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 11</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 12</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 13</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 14</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 15</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 16</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 17</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Week 18 (DO NOT BET)</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Wildcards</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Divsional Championships</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Conference Championships</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+          <tr>
+            <td>Superbowl</td>
+            <td>0-0</td>
+            <td>0%</td>
+            <td>----</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+
+<!-- Button row scrollspy  -->
+  <div id="btnrowscrollspy" style="text-align: center;">
+    <h3>Select the week you'd like to see the history for: </h3>
+    <hr>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(5, 1fr); grid-gap: 10px;">
+      <button id="buttonX" class="button"> <a href="#WEEK1RESULTS" style="color: black;">1</a></button>
+      <button id="buttonX" class="button"> <a href="#WEEK2RESULTS" style="color: black;">2</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK3RESULTS" style="color: black;">3</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK4RESULTS" style="color: black;">4</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK5RESULTS" style="color: black;">5</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK6RESULTS" style="color: black;">6</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK7RESULTS" style="color: black;">7</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK8RESULTS" style="color: black;">8</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK9RESULTS" style="color: black;">9</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK10RESULTS" style="color: black;">10</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK11RESULTS" style="color: black;">11</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK12RESULTS" style="color: black;">12</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK13RESULTS" style="color: black;">13</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK14RESULTS" style="color: black;">14</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK15RESULTS" style="color: black;">15</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK16RESULTS" style="color: black;">16</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK17RESULTS" style="color: black;">17</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK18RESULTS" style="color: black;">18</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK19RESULTS" style="color: black;">19</a></button>
+      <button id="buttonX" class="button" disabled> <a href="#WEEK20RESULTS" style="color: black;">20</a></button>
+    </div>
+    
+
+  </div>
+</br>
+<hr>
+<br>
+
+
+<!-- BEGIN WEEK HISTORY -->
+<div class="container-fluid">
+
+
+  <!-- WEEK 1 RESULTS TABLE -->
+  <div id="WEEK1RESULTS">
+    <div class="card-header" id="table-heading">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#v1Week1, #v2Week1" aria-expanded="true" aria-controls="v1Week1, v2Week1">
+          Week 1 Results
+        </button>
+      </h5>
+    </div>
+
+    <!--Week 1 -->
+    <div class="card" id="v1Week1">
+      <div id="v1Week1" class="collapse" aria-labelledby="table-heading">
+        <div class="table-responsive">
+          <h6 style="text-align: center;"> V1 </h6>
+          <table><tr><td>Teams</td><td>Predicted Result</td><td>Actual Result</td><td>Spread Choice</td><td>Spread Result</td></tr><tr><td>Bills Vs. Rams</td><td>The Buffalo Bills Will Defeat The Los Angeles Rams By: 5.095</td><td>Bills 31 Rams 10</td><td>Bills -2.5</td><td>W</td></tr><tr><td>Browns Vs. Panthers</td><td>The Cleveland Browns Will Defeat The Carolina Panthers By: 4.963</td><td>Browns 26 Panthers 24</td><td>Browns + 2.5</td><td>W</td></tr><tr><td>Colts Vs. Texans</td><td>The Indianapolis Colts Will Defeat The Houston Texans By: 13.286</td><td>Colts 20 Texans 20</td><td>Colts -8.0</td><td>L</td></tr><tr><td>Raves Vs. Jets</td><td>The Baltimore Ravens Will Defeat The New York Jets By: 10.948</td><td>Ravens 24 Jets 9</td><td>Ravens -7.0</td><td>W</td></tr><tr><td>Patriots Vs. Dolphins</td><td>The New England Patriots Will Defeat The Miami Dolphins By: 6.787</td><td>Patriots 7 Dolphins 20</td><td>Patriots +3.0</td><td>L</td></tr><tr><td>Bengals Vs. Steelers</td><td>The Cincinnati Bengals Will Defeat The Pittsburgh Steelers By: 5.247</td><td>Steelers 23 Bengals 20</td><td>Steelers +6.5</td><td>W</td></tr><tr><td>Saints Vs. Falcons</td><td>The New Orleans Saints Will Defeat The Atlanta Falcons By: 7.645</td><td>Saints 27 Falcons 26</td><td>Saints -5.5</td><td>L</td></tr><tr><td>Eagles Vs. Lions</td><td>The Philadelphia Eagles Will Defeat The Detroit Lions By: 8.989</td><td>Eagles 38 Lions 35</td><td>Eagles -4.0</td><td>L</td></tr><tr><td>Commanders Vs. Jaguars</td><td>The Washington Commanders Will Defeat The Jacksonville Jaguars By: 9.581</td><td>Jaguars 22 Commanders 28</td><td>Commanders - 3.0</td><td>W</td></tr><tr><td>49ers Vs. Bears</td><td>The San Francisco 49ers Will Defeat The Chicago Bears By: 7.855</td><td>49ers 10 Bears 19</td><td>49ers - 7.0</td><td>L</td></tr><tr><td>Packers Vs. Vikings</td><td>The Green Bay Packers Will Defeat The Minnesota Vikings By: 6.68</td><td>Packers: 7, Vikings: 23</td><td>Packers -2.0</td><td>L</td></tr><tr><td>Chargers Vs. Raiders</td><td>The Los Angeles Chargers Will Defeat The Las Vegas Raiders By: 0.288</td><td>Raiders 19 Chargers 24</td><td>Raiders +3.5</td><td>L</td></tr><tr><td>Cardinals Vs. Chiefs</td><td>The Arizona Cardinals Will Defeat The Kansas City Chiefs By: 2.61</td><td>Chiefs 44 Cardinals 21</td><td>Cardinals +4.5</td><td>L</td></tr><tr><td>Titans Vs. Giants</td><td>The Tennessee Titans Will Defeat The New York Giants By: 9.244</td><td>Giants 21 Titans 20</td><td>Titans -5.5</td><td>L</td></tr><tr><td>Cowboys Vs. Buccaneers</td><td>The Dallas Cowboys Will Defeat The Tampa Bay Buccaneers By: 0.006</td><td>Buccaneers 19, Cowboys: 3</td><td>Cowboys +1.5</td><td>L</td></tr><tr><td>Broncos Vs. Seahawks</td><td>The Denver Broncos Will Defeat The Seattle Seahawks By: 4.404</td><td>Seahawks: 17, Broncos: 16</td><td>Seahawks +6.5</td><td>W</td></tr></table>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Week 1 v2-->
+    <div class="card" id="v2Week1">
+      <div id="v2Week1" class="collapse" aria-labelledby="table-heading">
+        <div class="table-responsive">
+          <h6 style="text-align: center;"> V2 </h6>
+          <table><tr><td>Teams</td><td>Predicted Result</td><td>Actual Result</td><td>Spread Choice</td><td>Spread Result</td></tr><tr><td>Bills Vs. Rams</td><td>The Buffalo Bills Will Defeat The Los Angeles Rams By: 5.095</td><td>Bills 31 Rams 10</td><td>Bills -2.5</td><td>W</td></tr><tr><td>Browns Vs. Panthers</td><td>The Cleveland Browns Will Defeat The Carolina Panthers By: 4.963</td><td>Browns 26 Panthers 24</td><td>Browns + 2.5</td><td>W</td></tr><tr><td>Colts Vs. Texans</td><td>The Indianapolis Colts Will Defeat The Houston Texans By: 13.286</td><td>Colts 20 Texans 20</td><td>Colts -8.0</td><td>L</td></tr><tr><td>Raves Vs. Jets</td><td>The Baltimore Ravens Will Defeat The New York Jets By: 10.948</td><td>Ravens 24 Jets 9</td><td>Ravens -7.0</td><td>W</td></tr><tr><td>Patriots Vs. Dolphins</td><td>The New England Patriots Will Defeat The Miami Dolphins By: 6.787</td><td>Patriots 7 Dolphins 20</td><td>Patriots +3.0</td><td>L</td></tr><tr><td>Bengals Vs. Steelers</td><td>The Cincinnati Bengals Will Defeat The Pittsburgh Steelers By: 5.247</td><td>Steelers 23 Bengals 20</td><td>Steelers +6.5</td><td>W</td></tr><tr><td>Saints Vs. Falcons</td><td>The New Orleans Saints Will Defeat The Atlanta Falcons By: 7.645</td><td>Saints 27 Falcons 26</td><td>Saints -5.5</td><td>L</td></tr><tr><td>Eagles Vs. Lions</td><td>The Philadelphia Eagles Will Defeat The Detroit Lions By: 8.989</td><td>Eagles 38 Lions 35</td><td>Eagles -4.0</td><td>L</td></tr><tr><td>Commanders Vs. Jaguars</td><td>The Washington Commanders Will Defeat The Jacksonville Jaguars By: 9.581</td><td>Jaguars 22 Commanders 28</td><td>Commanders - 3.0</td><td>W</td></tr><tr><td>49ers Vs. Bears</td><td>The San Francisco 49ers Will Defeat The Chicago Bears By: 7.855</td><td>49ers 10 Bears 19</td><td>49ers - 7.0</td><td>L</td></tr><tr><td>Packers Vs. Vikings</td><td>The Green Bay Packers Will Defeat The Minnesota Vikings By: 6.68</td><td>Packers: 7, Vikings: 23</td><td>Packers -2.0</td><td>L</td></tr><tr><td>Chargers Vs. Raiders</td><td>The Los Angeles Chargers Will Defeat The Las Vegas Raiders By: 0.288</td><td>Raiders 19 Chargers 24</td><td>Raiders +3.5</td><td>L</td></tr><tr><td>Cardinals Vs. Chiefs</td><td>The Arizona Cardinals Will Defeat The Kansas City Chiefs By: 2.61</td><td>Chiefs 44 Cardinals 21</td><td>Cardinals +4.5</td><td>L</td></tr><tr><td>Titans Vs. Giants</td><td>The Tennessee Titans Will Defeat The New York Giants By: 9.244</td><td>Giants 21 Titans 20</td><td>Titans -5.5</td><td>L</td></tr><tr><td>Cowboys Vs. Buccaneers</td><td>The Dallas Cowboys Will Defeat The Tampa Bay Buccaneers By: 0.006</td><td>Buccaneers 19, Cowboys: 3</td><td>Cowboys +1.5</td><td>L</td></tr><tr><td>Broncos Vs. Seahawks</td><td>The Denver Broncos Will Defeat The Seattle Seahawks By: 4.404</td><td>Seahawks: 17, Broncos: 16</td><td>Seahawks +6.5</td><td>W</td></tr></table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- WEEK 2 RESULTS TABLE -->
+  <div id="WEEK2RESULTS">
+    <div class="card-header" id="table-heading">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#v1Week2, #v2Week2" aria-expanded="true" aria-controls="v1Week2, v2Week2">
+          Week 2 Results
+        </button>
+      </h5>
+    </div>
+
+    <!--Week 2 -->
+    <div class="card" id="v1Week2">
+      <div id="v1Week2" class="collapse" aria-labelledby="table-heading">
+        <div class="table-responsive">
+          <h6 style="text-align: center;"> V1 </h6>
+          <table><tr><td>Teams</td><td>Predicted Result</td><td>Actual Result</td><td>Spread Choice</td><td>Spread Result</td></tr><tr><td>Bills Vs. Rams</td><td>The Buffalo Bills Will Defeat The Los Angeles Rams By: 5.095</td><td>Bills 31 Rams 10</td><td>Bills -2.5</td><td>W</td></tr><tr><td>Browns Vs. Panthers</td><td>The Cleveland Browns Will Defeat The Carolina Panthers By: 4.963</td><td>Browns 26 Panthers 24</td><td>Browns + 2.5</td><td>W</td></tr><tr><td>Colts Vs. Texans</td><td>The Indianapolis Colts Will Defeat The Houston Texans By: 13.286</td><td>Colts 20 Texans 20</td><td>Colts -8.0</td><td>L</td></tr><tr><td>Raves Vs. Jets</td><td>The Baltimore Ravens Will Defeat The New York Jets By: 10.948</td><td>Ravens 24 Jets 9</td><td>Ravens -7.0</td><td>W</td></tr><tr><td>Patriots Vs. Dolphins</td><td>The New England Patriots Will Defeat The Miami Dolphins By: 6.787</td><td>Patriots 7 Dolphins 20</td><td>Patriots +3.0</td><td>L</td></tr><tr><td>Bengals Vs. Steelers</td><td>The Cincinnati Bengals Will Defeat The Pittsburgh Steelers By: 5.247</td><td>Steelers 23 Bengals 20</td><td>Steelers +6.5</td><td>W</td></tr><tr><td>Saints Vs. Falcons</td><td>The New Orleans Saints Will Defeat The Atlanta Falcons By: 7.645</td><td>Saints 27 Falcons 26</td><td>Saints -5.5</td><td>L</td></tr><tr><td>Eagles Vs. Lions</td><td>The Philadelphia Eagles Will Defeat The Detroit Lions By: 8.989</td><td>Eagles 38 Lions 35</td><td>Eagles -4.0</td><td>L</td></tr><tr><td>Commanders Vs. Jaguars</td><td>The Washington Commanders Will Defeat The Jacksonville Jaguars By: 9.581</td><td>Jaguars 22 Commanders 28</td><td>Commanders - 3.0</td><td>W</td></tr><tr><td>49ers Vs. Bears</td><td>The San Francisco 49ers Will Defeat The Chicago Bears By: 7.855</td><td>49ers 10 Bears 19</td><td>49ers - 7.0</td><td>L</td></tr><tr><td>Packers Vs. Vikings</td><td>The Green Bay Packers Will Defeat The Minnesota Vikings By: 6.68</td><td>Packers: 7, Vikings: 23</td><td>Packers -2.0</td><td>L</td></tr><tr><td>Chargers Vs. Raiders</td><td>The Los Angeles Chargers Will Defeat The Las Vegas Raiders By: 0.288</td><td>Raiders 19 Chargers 24</td><td>Raiders +3.5</td><td>L</td></tr><tr><td>Cardinals Vs. Chiefs</td><td>The Arizona Cardinals Will Defeat The Kansas City Chiefs By: 2.61</td><td>Chiefs 44 Cardinals 21</td><td>Cardinals +4.5</td><td>L</td></tr><tr><td>Titans Vs. Giants</td><td>The Tennessee Titans Will Defeat The New York Giants By: 9.244</td><td>Giants 21 Titans 20</td><td>Titans -5.5</td><td>L</td></tr><tr><td>Cowboys Vs. Buccaneers</td><td>The Dallas Cowboys Will Defeat The Tampa Bay Buccaneers By: 0.006</td><td>Buccaneers 19, Cowboys: 3</td><td>Cowboys +1.5</td><td>L</td></tr><tr><td>Broncos Vs. Seahawks</td><td>The Denver Broncos Will Defeat The Seattle Seahawks By: 4.404</td><td>Seahawks: 17, Broncos: 16</td><td>Seahawks +6.5</td><td>W</td></tr></table>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Week 2 v2-->
+    <div class="card" id="v2Week2">
+      <div id="v2Week2" class="collapse" aria-labelledby="table-heading">
+        <div class="table-responsive">
+          <h6 style="text-align: center;"> V2 </h6>
+          <table><tr><td>Teams</td><td>Predicted Result</td><td>Actual Result</td><td>Spread Choice</td><td>Spread Result</td></tr><tr><td>Bills Vs. Rams</td><td>The Buffalo Bills Will Defeat The Los Angeles Rams By: 5.095</td><td>Bills 31 Rams 10</td><td>Bills -2.5</td><td>W</td></tr><tr><td>Browns Vs. Panthers</td><td>The Cleveland Browns Will Defeat The Carolina Panthers By: 4.963</td><td>Browns 26 Panthers 24</td><td>Browns + 2.5</td><td>W</td></tr><tr><td>Colts Vs. Texans</td><td>The Indianapolis Colts Will Defeat The Houston Texans By: 13.286</td><td>Colts 20 Texans 20</td><td>Colts -8.0</td><td>L</td></tr><tr><td>Raves Vs. Jets</td><td>The Baltimore Ravens Will Defeat The New York Jets By: 10.948</td><td>Ravens 24 Jets 9</td><td>Ravens -7.0</td><td>W</td></tr><tr><td>Patriots Vs. Dolphins</td><td>The New England Patriots Will Defeat The Miami Dolphins By: 6.787</td><td>Patriots 7 Dolphins 20</td><td>Patriots +3.0</td><td>L</td></tr><tr><td>Bengals Vs. Steelers</td><td>The Cincinnati Bengals Will Defeat The Pittsburgh Steelers By: 5.247</td><td>Steelers 23 Bengals 20</td><td>Steelers +6.5</td><td>W</td></tr><tr><td>Saints Vs. Falcons</td><td>The New Orleans Saints Will Defeat The Atlanta Falcons By: 7.645</td><td>Saints 27 Falcons 26</td><td>Saints -5.5</td><td>L</td></tr><tr><td>Eagles Vs. Lions</td><td>The Philadelphia Eagles Will Defeat The Detroit Lions By: 8.989</td><td>Eagles 38 Lions 35</td><td>Eagles -4.0</td><td>L</td></tr><tr><td>Commanders Vs. Jaguars</td><td>The Washington Commanders Will Defeat The Jacksonville Jaguars By: 9.581</td><td>Jaguars 22 Commanders 28</td><td>Commanders - 3.0</td><td>W</td></tr><tr><td>49ers Vs. Bears</td><td>The San Francisco 49ers Will Defeat The Chicago Bears By: 7.855</td><td>49ers 10 Bears 19</td><td>49ers - 7.0</td><td>L</td></tr><tr><td>Packers Vs. Vikings</td><td>The Green Bay Packers Will Defeat The Minnesota Vikings By: 6.68</td><td>Packers: 7, Vikings: 23</td><td>Packers -2.0</td><td>L</td></tr><tr><td>Chargers Vs. Raiders</td><td>The Los Angeles Chargers Will Defeat The Las Vegas Raiders By: 0.288</td><td>Raiders 19 Chargers 24</td><td>Raiders +3.5</td><td>L</td></tr><tr><td>Cardinals Vs. Chiefs</td><td>The Arizona Cardinals Will Defeat The Kansas City Chiefs By: 2.61</td><td>Chiefs 44 Cardinals 21</td><td>Cardinals +4.5</td><td>L</td></tr><tr><td>Titans Vs. Giants</td><td>The Tennessee Titans Will Defeat The New York Giants By: 9.244</td><td>Giants 21 Titans 20</td><td>Titans -5.5</td><td>L</td></tr><tr><td>Cowboys Vs. Buccaneers</td><td>The Dallas Cowboys Will Defeat The Tampa Bay Buccaneers By: 0.006</td><td>Buccaneers 19, Cowboys: 3</td><td>Cowboys +1.5</td><td>L</td></tr><tr><td>Broncos Vs. Seahawks</td><td>The Denver Broncos Will Defeat The Seattle Seahawks By: 4.404</td><td>Seahawks: 17, Broncos: 16</td><td>Seahawks +6.5</td><td>W</td></tr></table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+
+</div>
+<!-- END WEEKLY HISTORY -->
 
 {% endblock %}

@@ -5,38 +5,40 @@
 {% endblock %}
 
 {% block content %}
-<div class="box-frame" style="border: 2px solid black; padding: 10px;">
-  <h1>Current Week version 1</h1>
-  <p>We like to keep it old school.</p>
-  <p>Sample data btw</p>
-
-  <h3 style="text-align: center;">Matchup/Spread/Choice/Differential</h3>
+<div class="box-frame">
+  <h3 style="text-align: center;">Matchup          /          Spread          /           Choice          /          Differential</h3>
   {% for i in matchups_length %}
-  <div class="card">
+  <div class="card" style="border: 2px solid black; padding: 0%; background-color: royalblue;">
     <div class="card-body">
       <div class="row">
-        <div class="col-sm-3" style="background-color: aliceblue;">
+        <div class="col-sm-3" style = "border-right: 2px solid black;">
+          <!-- <div class="column-header">Result:</div> -->
           <p>The {{win_lose_spr[i][0]}} will beat the {{win_lose_spr[i][1]}} by {{win_lose_spr[i][2]}}</p>
         </div>
-        <div class="col-sm-3" style="background-color: lightseagreen;">
-          <p> {{pairs[i][0]}}: {{pairs[i][1]}} </p>
-          <p> {{pairs[i][2]}}: {{pairs[i][3]}} </p>
+        <div class="col-sm-3" style="border-right: 2px solid black; border-left: 2px solid black;">
+          <!-- <div class="column-header">Options:</div> -->
+          <p> {{pairs[i][0]}}: {{pairs[i][1]}} </p> <p> {{pairs[i][2]}}: {{pairs[i][3]}} </p>
         </div>
-        <div class="col-sm-3" style="background-color: aliceblue;">
+        <div class="col-sm-3" style="border-right: 2px solid black; border-left: 2px solid black;">
+          <!-- <div class="column-header">Recommendation:</div> -->
           {% set sprTeam = form_choices[i][0] %}
           {% set sprNum = form_choices[i][1] %}
           {% if sprNum > 0 %}
-            <p><strong>{{sprTeam}} +{{sprNum}}</strong></p>
+            <h3><strong>{{sprTeam}} +{{sprNum}}</strong></h3>
           {% else %}
-          <p><strong>{{sprTeam}} {{sprNum}}</strong></p>
+            <h3><strong>{{sprTeam}} {{sprNum}}</strong></h3>
           {% endif %}
         </div>
-        <div class="col-sm-3" style="background-color: lightseagreen;">
-          <p>difference...RAG</p>
+        <div class="col-sm-3" style="border-left: 2px solid black;">
+          <!-- <div class="column-header">Confidence</div> -->
+          {% set color = hex_list[i][1] %}
+          <h2 style="color: {{color}};">{{hex_list[i][0]}}</2>
         </div>
+        
       </div>
     </div>
-  </div>
+    
+  </div> </br>
 {% endfor %}
 
 </div>
